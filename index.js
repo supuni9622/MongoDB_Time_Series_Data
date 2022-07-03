@@ -9,7 +9,9 @@ const updateListingByName = require('./operations/updateOne');
 const upsertListingByName = require('./operations/upsertOne');
 const updateAllListingsToHavePropertyType= require('./operations/updateMany');
 const deleteListingByName = require('./operations/deleteOne');
-const deleteListingsScrapedBeforeDate = require('./operations/deleteMany')
+const deleteListingsScrapedBeforeDate = require('./operations/deleteMany');
+const createCollection = require('./operations/createCollection');
+const createTimeSeriesCollection = require('./operations/createTimeSeriesCollection')
 
 //MongoConnector();
 //TimeSeriesDBConnector();
@@ -23,16 +25,21 @@ const startOperations = async () => {
         // Connect to the MongoDB cluster
         await client.connect();
 
+
         // Make the appropriate DB calls
+
+      //  await createCollection(client, 'normal_collection');
+
+      await  createTimeSeriesCollection(client, 'windsensors', 'ts', "metadata", 'seconds')
        
-          await createListing(client,
-        {
-            name: "Lovel Loft",
-            summary: "A charming loft in Paris",
-            bedrooms: 5,
-            bathrooms: 1
-        }
-    );
+    //       await createListing(client,
+    //     {
+    //         name: "Lovel Loft",
+    //         summary: "A charming loft in Paris",
+    //         bedrooms: 5,
+    //         bathrooms: 1
+    //     }
+    // );
 
     // await createMultipleListings(client, [
     //     {
