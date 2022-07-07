@@ -1,5 +1,11 @@
-async function createMultipleListings(client, newListings){
-    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertMany(newListings);
+const createMultipleListings = async (
+    client, 
+    collectionName,
+    newListings,
+    )=>{
+
+    const DB = 'time_series_demo';
+    const result = await client.db(DB).collection(collectionName).insertMany(newListings);
 
     console.log(`${result.insertedCount} new listing(s) created with the following id(s):`);
     console.log(result.insertedIds);       
