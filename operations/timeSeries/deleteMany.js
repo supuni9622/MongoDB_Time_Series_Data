@@ -4,8 +4,8 @@ const deleteManyDocs = async(
     ) =>{
 
     const DB = 'time_series_demo';
-    // const result = await client.db(DB).collection(collectionName)
-    //                     .deleteMany({ 'metadata.type' : "windspeed"});
+    const result = await client.db(DB).collection(collectionName)
+                        .deleteMany({ 'metadata.type' : "windspeed"});
 
 
     // const result = await client.db(DB).collection(collectionName)

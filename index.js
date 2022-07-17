@@ -21,26 +21,35 @@ const startOperations = async () => {
         await client.connect();
         const collectionName = 'windsensors';
 
+
         // Manually create the time series collection
-        // await  createTimeSeriesCollection(
-        //     client, 
+        //  await  createTimeSeriesCollection(
+        //    client, 
         //     collectionName, 
         //     'ts', // timeField
         //     "metadata", //metaField
         //     'seconds' // Granularity
-        // );
+        //  );
+
+
 
         //Insert one document into the collection
         //await createListing(client,collectionName,SingleDoc);
 
+
+
         // Insert multiple documents into the collection
         //await createMultipleListings(client,collectionName,MultipleDocs );
 
+
+
         // Query one document in the collection
-        //await findOneDoc(client,collectionName,18.263742590570686); //value
+       // await findOneDoc(client,collectionName,18.263742590570686); //value
 
         //Query multiple documents in the collection 
         //await findManyDocs(client,collectionName,31096); //sensorId
+
+
 
         //Update documents in the collection
 
@@ -49,6 +58,8 @@ const startOperations = async () => {
         //     collectionName
         //     );
         
+
+
         //Delete documents in the collection
 
     //    await deleteManyDocs(

@@ -6,10 +6,10 @@ const updateManyDocs = async(
     const DB = 'time_series_demo';
 
     // 1. Update metadata.type from 'windspeed2' to 'windspeed3'
-    // const result = await client.db(DB).collection(collectionName)
-    //                     .updateMany(
-    //                                 { 'metadata.type' : "windspeed2"}, 
-    //                                 { $set: { 'metadata.type':  "windspeed3" } });
+    const result = await client.db(DB).collection(collectionName)
+                        .updateMany(
+                                    { 'metadata.type' : "windspeed2"}, 
+                                    { $set: { 'metadata.type':  "windspeed3" } });
 
 
     // 2. Update metadata.type of the document which has value 18.263742590570686
